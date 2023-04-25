@@ -5,9 +5,17 @@ app = Flask(__name__)  # This line means hey python turn this file into a
 
 @app.route("/")  # To tell the Flask when to call this index function.
 def index():
-    name = request.args.get("name")
-    return render_template("index.html", name_of_person="Usama") # explicitly assign the name.
+    # name = request.args.get("name")
+    return render_template("index.html")
+    # return render_template("index.html", name_of_person="Usama") # explicitly assign the name.
     # return render_template("index.html", name_of_person=name) # return the result of rendering a
 # template called index.html. render means printed this file on the screen so to speak.
 
 # decorator is a special type of function that modifies another function.
+
+@app.route("/greet")
+def greet():
+    name = request.args.get("name")
+    # name = request.args.get("name", "world") # "world" is a default value if there
+    # is no name entered.
+    return render_template("greet.html", name=name)
