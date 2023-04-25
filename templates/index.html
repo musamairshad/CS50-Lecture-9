@@ -6,6 +6,11 @@
         <title>Hello Flask</title>
     </head>
     <body>
-        Hello, {{ name_of_person }}
+        <!-- Hello, {{ name_of_person }} -->
+        <form action="/greet" method="get">
+            <input autocomplete="off" autofocus name="name" placeholder="Name"
+            required type="text">
+            <input type="submit">
+        </form>
     </body>
 </html>
