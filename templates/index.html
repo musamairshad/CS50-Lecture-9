@@ -1,3 +1,17 @@
+<!-- Mix of HTML with templating code. -->
+
+{% extends "layout.html" %} <!-- Hey Flask this file extends layout.html -->
+
+{% block body %} <!-- This file has its own body block. -->
+
+<form action="/greet" method="get">
+    <input autocomplete="off" autofocus name="name" placeholder="Name" required type="text">
+    <input type="submit">
+</form>
+
+{% endblock %}
+
+<!--
 <!DOCTYPE html>
 
 <html lang="en">
@@ -6,7 +20,7 @@
         <title>Hello Flask</title>
     </head>
     <body>
-        <!-- Hello, {{ name_of_person }} -->
+        Hello, {{ name_of_person }}
         <form action="/greet" method="get">
             <input autocomplete="off" autofocus name="name" placeholder="Name"
             required type="text">
@@ -14,3 +28,4 @@
         </form>
     </body>
 </html>
+--->
